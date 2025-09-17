@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using CMCS.Models
+@model List<IdentityUser>
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h1>All Registered Users</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>
+                    <a asp-controller="Admin" asp-action="ManageRoles" asp-route-userId="@user.Id" class="btn btn-primary btn-sm">Manage Roles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

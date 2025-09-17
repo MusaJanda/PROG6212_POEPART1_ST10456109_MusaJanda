@@ -1,0 +1,40 @@
+﻿@using CMCS.Models;
+@{
+    ViewData["Title"] = " Academic Manager Approvals";
+    var claimsToApprove = ViewData["ClaimsToApprove"] as List<Claim>;
+}
+
+<h1>Claims Awaiting Final Approval</h1>
+
+@if (claimsToApprove != null && claimsToApprove.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Claim ID</th>
+                <th>Lecturer</th>
+                <th>Hours</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var claim in claimsToApprove)
+            {
+                <tr>
+                    <td>@claim.ClaimId</td>
+                    <td>@claim.Lecturer.FirstName</td>
+                    <td>@claim.HoursWorked</td>
+                    <td>@claim.Status</td>
+                    <td>
+                        <a asp-controller="Claims" asp-action="Approve" asp-route-id="@claim.ClaimId" class="btn btn-success btn-sm">Approve/Reject</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>There are no claims currently pending your approval.</p>
+}
