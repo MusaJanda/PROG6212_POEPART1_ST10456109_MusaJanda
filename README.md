@@ -34,7 +34,7 @@ This project was developed using **ASP.NET Core MVC** with **Entity Framework Co
 ## How to use the CMCS System
 1. **Register:** Firstly, the user needs to have an account to use the system, thus required to create an account.
 2. **Login:** After creating an account, and confirming it, the user then logs into the system.
-3. **Note:** The user must choose the role (e.g. Lecturer, Programme Coordinator, and Academi Manager) when creating the account to see the appropriate dashboard. The Lecturer will see a Claim button to submit a claim and send supporting documents. The Programme Coordinator and Academic Manager will see their own dashboard to either Accept/Reject a claim if it has been made by the Lecturer, and write a note to the Lecturer if the claim is rejected.
+3. **Note:** The user must choose the role (e.g. Lecturer, Programme Coordinator, and Academic Manager) when creating the account to see the appropriate dashboard. The Lecturer will see a Claim button to submit a claim and send supporting documents. The Programme Coordinator and Academic Manager will see their own dashboard to either Accept/Reject a claim if it has been made by the Lecturer, and write a note to the Lecturer if the claim is rejected.
 
 
 ---
